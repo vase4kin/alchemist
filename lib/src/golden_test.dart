@@ -22,7 +22,8 @@ set goldenTestRunner(GoldenTestRunner value) => _goldenTestRunner = value;
 /// An internal function that executes all necessary setup steps required to run
 /// golden tests.
 Future<void> _setUpGoldenTests() async {
-  await loadFonts();
+  // NOTE(vase4kin): Do not load fonts on every test execution
+  // await loadFonts();
 
   RenderErrorBox.textStyle = ui.TextStyle(
     fontFamily: 'Roboto',
